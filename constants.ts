@@ -1,0 +1,171 @@
+import { Exercise, Supplement, GoalType } from './types';
+
+// NOTE: Exercise data has been moved to data.ts for scalability, keeping this for UI constants
+
+export const SUPPLEMENTS: Supplement[] = [
+  {
+    id: 'whey',
+    name: { en: 'Whey Protein', ar: 'واي بروتين' },
+    image: 'https://picsum.photos/200/200?random=1',
+    description: { en: 'Fast absorbing protein for muscle recovery.', ar: 'بروتين سريع الامتصاص لاستشفاء العضلات.' },
+    dosage: { en: '1 scoop (25g) post-workout.', ar: 'مكيال واحد (25 جم) بعد التمرين.' },
+    requiresSubscription: false
+  },
+  {
+    id: 'creatine',
+    name: { en: 'Creatine Monohydrate', ar: 'كرياتين مونوهيدرات' },
+    image: 'https://picsum.photos/200/200?random=2',
+    description: { en: 'Increases strength and power output.', ar: 'يزيد القوة والطاقة الانفجارية.' },
+    dosage: { en: '5g daily, anytime.', ar: '5 جم يومياً في أي وقت.' },
+    requiresSubscription: false
+  },
+  {
+    id: 'omega3',
+    name: { en: 'Omega-3', ar: 'أوميغا 3' },
+    image: 'https://picsum.photos/200/200?random=3',
+    description: { en: 'Joint health and inflammation reduction.', ar: 'صحة المفاصل وتقليل الالتهابات.' },
+    dosage: { en: '1000mg-2000mg with meals.', ar: '1000-2000 مجم مع الوجبات.' },
+    requiresSubscription: true
+  },
+  {
+    id: 'bcaa',
+    name: { en: 'BCAA/EAA', ar: 'أحماض أمينية' },
+    image: 'https://picsum.photos/200/200?random=4',
+    description: { en: 'Prevents muscle breakdown during fasting.', ar: 'يمنع هدم العضلات أثناء الصيام.' },
+    dosage: { en: '5-10g during workout.', ar: '5-10 جم أثناء التمرين.' },
+    requiresSubscription: true
+  },
+  {
+    id: 'zinc_mag',
+    name: { en: 'ZMA (Zinc & Magnesium)', ar: 'الزنك والمغنيسيوم' },
+    image: 'https://picsum.photos/200/200?random=5',
+    description: { en: 'Improves sleep quality and testosterone.', ar: 'يحسن جودة النوم وهرمون التستوستيرون.' },
+    dosage: { en: '3 capsules before bed.', ar: '3 كبسولات قبل النوم.' },
+    requiresSubscription: true
+  }
+];
+
+export const GOAL_SETTINGS: Record<GoalType, { sets: number; repRange: string; rest: string }> = {
+  weight_loss: { sets: 3, repRange: '15-20', rest: '30-45' },
+  endurance: { sets: 3, repRange: '15-25', rest: '30' },
+  muscle_gain: { sets: 4, repRange: '8-12', rest: '90' },
+  cutting: { sets: 4, repRange: '12-15', rest: '60' },
+  bulking: { sets: 4, repRange: '6-10', rest: '120' },
+  calisthenics: { sets: 4, repRange: 'Max - 2', rest: '90' },
+  powerlifting: { sets: 5, repRange: '3-5', rest: '180' },
+  flexibility: { sets: 2, repRange: '30s hold', rest: '30' },
+  queen_shape: { sets: 3, repRange: '12-15', rest: '60' }
+};
+
+export const TEXTS = {
+  en: {
+    heroTitle: 'GYM, Workouts & Injuries',
+    subtitle: 'Your AI-Powered Personal Trainer',
+    generateBtn: 'Generate Plan',
+    profile: 'Your Profile',
+    name: 'Name',
+    weight: 'Weight (kg)',
+    height: 'Height (cm)',
+    age: 'Age',
+    goal: 'Goal & Purpose',
+    injury: 'Injury / Condition',
+    experience: 'Experience Level',
+    weekPlan: 'Your 7-Day Smart Plan',
+    supplements: 'Recommended Supplements',
+    consultation: 'Injury Consultation',
+    sets: 'Sets',
+    reps: 'Reps',
+    rest: 'Rest',
+    sec: 'sec',
+    subscribe: 'Unlock Full Month Plan & Advanced Supplements',
+    subscribeBtn: 'Subscribe Now',
+    tips: 'Tips for Success',
+    contact: 'Contact Coach on WhatsApp',
+    locked: 'Subscribe to view',
+    mistakes: 'Common Mistakes',
+    instructions: 'Instructions',
+    alternatives: 'Alternatives',
+    translate: 'Translate الترجمة',
+    startTimer: 'Start Rest',
+    markComplete: 'Complete',
+    completed: 'Done',
+    nutrition: 'Nutrition & Meal Recommendation',
+    ingredients: 'Ingredients',
+    preparation: 'Preparation',
+    options: {
+      none: 'None',
+      shoulder: 'Shoulder Injury',
+      knee: 'Knee Injury',
+      back: 'Back Pain',
+      wrist: 'Wrist Pain',
+      elbow: 'Elbow Pain',
+      weight_loss: 'Weight Loss',
+      muscle_gain: 'Muscle Gain',
+      endurance: 'Endurance',
+      cutting: 'Cutting (Definition)',
+      bulking: 'Bulking (Size)',
+      calisthenics: 'Calisthenics (Bodyweight)',
+      powerlifting: 'Powerlifting (Strength)',
+      flexibility: 'Flexibility & Mobility',
+      queen_shape: 'Queen Shape (Curvy & Fit)',
+      beginner: 'Beginner',
+      intermediate: 'Intermediate',
+      advanced: 'Advanced'
+    }
+  },
+  ar: {
+    heroTitle: 'الجيم والإصابات والتمارين',
+    subtitle: 'مدربك الشخصي بالذكاء الاصطناعي',
+    generateBtn: 'إنشاء الخطة',
+    profile: 'ملفك الشخصي',
+    name: 'الاسم',
+    weight: 'الوزن (كجم)',
+    height: 'الطول (سم)',
+    age: 'العمر',
+    goal: 'الهدف والغرض',
+    injury: 'الإصابة / الحالة',
+    experience: 'مستوى الخبرة',
+    weekPlan: 'خطة الأسبوع الذكية',
+    supplements: 'المكملات الغذائية الموصى بها',
+    consultation: 'استشارة الإصابة',
+    sets: 'مجموعات',
+    reps: 'تكرار',
+    rest: 'راحة',
+    sec: 'ثانية',
+    subscribe: 'احصل على خطة شهر كاملة ومكملات متقدمة',
+    subscribeBtn: 'اشترك الآن',
+    tips: 'نصائح للنجاح',
+    contact: 'تواصل مع المدرب واتساب',
+    locked: 'اشترك للمشاهدة',
+    mistakes: 'أخطاء شائعة',
+    instructions: 'التعليمات',
+    alternatives: 'البدائل',
+    translate: 'Translate الترجمة',
+    startTimer: 'بدء الراحة',
+    markComplete: 'إكمال',
+    completed: 'تم',
+    nutrition: 'التغذية والوجبة المقترحة',
+    ingredients: 'المكونات',
+    preparation: 'التحضير',
+    options: {
+      none: 'لا يوجد',
+      shoulder: 'إصابة الكتف',
+      knee: 'إصابة الركبة',
+      back: 'ألم الظهر',
+      wrist: 'ألم المعصم',
+      elbow: 'ألم الكوع',
+      weight_loss: 'خسارة الوزن',
+      muscle_gain: 'بناء العضلات',
+      endurance: 'التحمل',
+      cutting: 'تنشيف',
+      bulking: 'تضخيم',
+      calisthenics: 'كاليستنكس (وزن الجسم)',
+      powerlifting: 'رفع أثقال (قوة قصوى)',
+      flexibility: 'مرونة وإطالة',
+      queen_shape: 'جسم الملكة (نحت وتناسق)',
+      beginner: 'مبتدئ',
+      intermediate: 'متوسط',
+      advanced: 'متقدم'
+    }
+  }
+};
