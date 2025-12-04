@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { DayPlan, Language, UserProfile } from '../types';
 import { TEXTS } from '../constants';
@@ -106,7 +107,6 @@ const WeeklyPlan: React.FC<Props> = ({ plan, lang, profile }) => {
                 {/* Empty State */}
                 {day.exercises.length === 0 ? (
                   <div className="flex flex-col items-center justify-center p-12 text-gray-400 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl">
-                    <span className="text-5xl mb-4 grayscale opacity-50">🧘</span>
                     <p className="font-medium text-lg">{lang === 'en' ? 'Rest & Recovery Day' : 'يوم راحة واستشفاء'}</p>
                     <p className="text-sm mt-2">{lang === 'en' ? 'Focus on hydration and stretching' : 'ركز على شرب الماء والإطالة'}</p>
                   </div>
@@ -121,13 +121,13 @@ const WeeklyPlan: React.FC<Props> = ({ plan, lang, profile }) => {
                       return (
                         <div key={i} className={`relative bg-white dark:bg-gray-800 p-5 rounded-xl border-l-4 shadow-sm transition-all duration-300 ${
                           isCompleted 
-                            ? 'border-green-500 opacity-60 grayscale-[0.5]' 
+                            ? 'border-purple-500 opacity-80' 
                             : 'border-blue-500 hover:shadow-md'
                         }`}>
                           <div className="flex justify-between items-start mb-4">
                             <div className="flex items-start gap-3">
-                              <button onClick={() => toggleComplete(index, i)} className="mt-1 text-gray-300 hover:text-green-500 transition-colors">
-                                {isCompleted ? <CheckCircle className="w-7 h-7 text-green-500" /> : <Circle className="w-7 h-7" />}
+                              <button onClick={() => toggleComplete(index, i)} className="mt-1 text-gray-300 hover:text-purple-500 transition-colors">
+                                {isCompleted ? <CheckCircle className="w-7 h-7 text-purple-500" /> : <Circle className="w-7 h-7" />}
                               </button>
                               <div>
                                 <h4 className={`font-bold text-lg md:text-xl leading-tight mb-1 ${isCompleted ? 'text-gray-500 line-through' : 'text-gray-800 dark:text-white'}`}>

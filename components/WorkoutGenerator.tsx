@@ -102,7 +102,7 @@ const WorkoutGenerator: React.FC<Props> = ({ profile, setProfile, onGenerate, la
               name="injury"
               value={profile.injury}
               onChange={handleChange}
-              className={`${inputClass} border-red-100 dark:border-red-900/50 bg-red-50/50 dark:bg-red-900/10 focus:ring-red-500`}
+              className={`${inputClass} border-purple-500 dark:border-purple-500 bg-purple-50 dark:bg-purple-900/30 text-purple-900 dark:text-purple-100 focus:ring-accent`}
             >
               <option value="none">{t.options.none}</option>
               <option value="shoulder">{t.options.shoulder}</option>
@@ -111,7 +111,7 @@ const WorkoutGenerator: React.FC<Props> = ({ profile, setProfile, onGenerate, la
               <option value="wrist">{t.options.wrist}</option>
               <option value="elbow">{t.options.elbow}</option>
             </select>
-            <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-red-400">
+            <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-accent">
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
             </div>
           </div>
